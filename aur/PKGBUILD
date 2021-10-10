@@ -1,28 +1,18 @@
 # Maintainer: tkit <ch1994@outlook.com>
-pkgname=code-nautilus-git
+pkgname=codium-nautilus-git
 pkgver=r9.ddff975
 pkgrel=2
-pkgdesc="VSCode extension for Nautilus"
+pkgdesc="VSCodium extension for Nautilus"
 arch=('i686' 'x86_64')
-url="https://github.com/cra0zy/code-nautilus"
+url="https://github.com/Gyro7/codium-nautilus"
 license=('custom')
 depends=('python-nautilus')
 makedepends=('git')
-optdepends=('code: The Visual Studio Code (vscode) editor')
+optdepends=('codium: The Visual Studio Codium editor')
 install="${pkgname}.install"
 source=("${pkgname}::git+${url}.git")
 md5sums=('SKIP')
-pkgver() {
-    cd "$pkgname"
-    (
-        set -o pipefail
-        git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-            printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-    )
-}
 
 package() {
-    cd "$pkgname"
-    install -Dm755 code-nautilus.py "$pkgdir/usr/share/nautilus-python/extensions/code-nautilus.py"
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    wget -q https://raw.githubusercontent.com/Gyro7/codium-nautilus/master/install.sh -O - | bash
 }
