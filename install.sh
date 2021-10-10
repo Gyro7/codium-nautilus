@@ -8,7 +8,7 @@ rm -f ~/.local/share/nautilus-python/extensions/code-nautilus.py
 
 # Download and install the extension
 echo "Downloading newest version..."
-wget --show-progress -q -O ~/.local/share/nautilus-python/extensions/code-nautilus.py wget -qO- https://raw.githubusercontent.com/Gyro7/codium-nautilus/master/code-nautilus.py
+wget -qO- https://raw.githubusercontent.com/Gyro7/codium-nautilus/master/code-nautilus.py
 
 
 # Restart nautilus
