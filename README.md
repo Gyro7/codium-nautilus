@@ -1,4 +1,4 @@
-# code-nautilus
+# codium-nautilus
 
 This repo provides a Codium extension for Nautilus, forked from the VSCode Extension, for those who like to be Microsoft-free.
 
